@@ -37,7 +37,7 @@ export default function Tempapp() {
             className="bg-white px-2"
             onClick={async () => {
               const cityName = search;
-              const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=eec306174a9aa77c07d195171dc0df52`;
+              const url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=eec306174a9aa77c07d195171dc0df52`;
               const result = await fetch(url);
               const data = await result.json();
               const lat = data[0].lat;
