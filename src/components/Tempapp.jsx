@@ -6,8 +6,6 @@ import DateTime from "./DateTime";
 
 export default function Tempapp() {
   const [search, setSearch] = useState("");
-  const [lat, setLat] = useState(0);
-  const [lon, setLon] = useState(0);
   const [weather, setWeather] = useState("");
   const [temp, setTemp] = useState(0);
   const [mintemp, setMinTemp] = useState(0);
@@ -44,8 +42,8 @@ export default function Tempapp() {
               const data = await result.json();
               const lat = data[0].lat;
               const lon = data[0].lon;
-              setLat(lat);
-              setLon(lon);
+              // setLat(lat);
+              // setLon(lon);
               // ==================weather API======================
               const url2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=eec306174a9aa77c07d195171dc0df52`;
               const result2 = await fetch(url2);
@@ -74,6 +72,7 @@ export default function Tempapp() {
           </div>
           <img
             className="h-[150px] w-[150px]"
+            alt=""
             src="https://img.icons8.com/fluency/48/null/chance-of-storm.png"
           />
           <div className="weather text-[30px]">{weather}</div>
